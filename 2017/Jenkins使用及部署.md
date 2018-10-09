@@ -6,7 +6,7 @@
 
 [Jenkins](https://jenkins.io)是用来持续集成的利器，它可以帮我们打包（build）、跑测试（test）、部署到测试或者生产环境（deploy）
 
-### 安装
+## 安装
 
 首先确保您的电脑安装了[Docker](https://www.docker.com/docker-mac)，推荐国内docker镜像仓库[网易蜂巢](https://c.163.com/hub#/m/home/)
 
@@ -23,7 +23,7 @@ docker run -p 8080:8080 -p 50000:50000 -v /your/home:/var/jenkins_home hub.c.163
   * 最后一个参数是镜像名称
   * 还可加入-d命令，使容器可以运行在后台
 
-### 使用
+## 使用
 
 docker run 命令执行后在浏览器打开 http://localhost:8080
 
@@ -34,7 +34,7 @@ docker run 命令执行后在浏览器打开 http://localhost:8080
 ![](http://otj0cetqv.bkt.clouddn.com/170723/jenkins_start_3.png)
 ![](http://otj0cetqv.bkt.clouddn.com/170723/jenkins_start_4.png)
   
-### 安装jenkins插件
+## 安装jenkins插件
 
 点击 系统管理 > 管理插件 > 可选插件 > nodeJs Plugin 
 
@@ -44,7 +44,7 @@ docker run 命令执行后在浏览器打开 http://localhost:8080
 
 ![](http://otj0cetqv.bkt.clouddn.com/170723/jenkins_start_5.png)
 
-### 配置SSH
+## 配置SSH
 
 配置git访问权限，参考下图
 
@@ -58,7 +58,7 @@ docker run 命令执行后在浏览器打开 http://localhost:8080
 
 ![](http://otj0cetqv.bkt.clouddn.com/170723/jenkins_start_7.png)
 
-### 创建Job
+## 创建Job
 ![](http://otj0cetqv.bkt.clouddn.com/170723/jenkins_start_8.png)
 
 使用Git获取源代码
@@ -70,13 +70,13 @@ docker run 命令执行后在浏览器打开 http://localhost:8080
 
 ![](http://otj0cetqv.bkt.clouddn.com/170723/jenkins_start_10.png)
 
-### 控制台
+## 控制台
 点击立即构建，待构建完成W显示的是个太阳说明构建成功。
 
 ![](http://otj0cetqv.bkt.clouddn.com/170723/jenkins_start_11.png)
 
 
-### 总结
+## 总结
 本项目展示的是一个Web前端项目的构建过程，Jenkins还可以构建Android Apk，Java War包等更多构建需求。
 
 构建执行完毕，可以执行各种bash命令以及SSH远程命令，完成最终的发布过程。

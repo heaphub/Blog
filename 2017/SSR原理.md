@@ -12,8 +12,8 @@
 
 ![](http://otj0cetqv.bkt.clouddn.com/170907/zhuang_bi.png)
 
-Virtual DOM
-------
+## Virtual DOM
+
 Virtual DOM是React性能卓越的大杀器，那时其他框架还不具备VD人们也经常争论性能到底哪家强。
 
 框架将数据渲染为虚拟DOM，这时通过diff算法与真实DOM对比找出不同的之处，然后通过render函数维护DOM。
@@ -22,8 +22,8 @@ Virtual DOM是React性能卓越的大杀器，那时其他框架还不具备VD�
 
 > DOM本身是一种树型结构（Tree），虚拟DOM采用红黑树实现
 
-状态机（Vuex、Redux）
-------
+## 状态机（Vuex、Redux）
+
 前端数据持久化以及标准数据流，这个标准数据流在服务端渲染时起到了数据预加载的作用。
 服务端渲染时会在组件实例上增加一个生命周期函数，这时只需要把对应的action写在函数里服务端就会加载数据。
 
@@ -31,20 +31,20 @@ Virtual DOM是React性能卓越的大杀器，那时其他框架还不具备VD�
 
 数据拿到了可以渲染Virtual DOM了。
 
-SSR
-------
+## SSR
+
 SSR(Server Side Render)服务器端渲染，Virtual DOM在不执行diff时render函数直接渲染，此时生成的DOM就是传统的HTML。
 此时HTTP服务器将这个渲染好的HTML文本流返回浏览器，这时我们就又回到了传统的HTML。
 
 
-总结
-------
+## 总结
+
 之所以最后才介绍主角（SSR），是因为这个解决方案的核心离不开Virtual DOM与状态机的标准数据流，目前主流前端框架均支持了SSR特性。
 
 > 如果没有Virtual DOM与状态机，那么这件事儿能解决不？答案是肯定的，想想e2e test。
 
-下期预告
-------
+## 下期预告
+
 SSR听着很过瘾，但是想自己搭建一套过过瘾却不知如何下手，下期就带大家一起搭建一套。
 
 > 怕麻烦，开箱即用的方案 [Nuxt](https://nuxtjs.org/)
