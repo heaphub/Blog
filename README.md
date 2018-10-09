@@ -1,2 +1,8 @@
+---
+typora-copy-images-to: ./media
+typora-root-url: ./
+---
+
 # Blog
-日常记录
+
+![Photo_201501281126185CM5](/media/Photo_201501281126185CM5.jpg)
