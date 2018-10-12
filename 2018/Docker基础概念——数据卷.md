@@ -13,7 +13,7 @@ Docker的数据卷有如下几种：
 ## 数据卷
 ### 创建
 #### 匿名卷
-docker run的-v命令创建**匿名卷**，此命令会在容器根目录下创建一个data目录。
+docker run的`-v`命令创建**匿名卷**，此命令会在容器根目录下创建一个data目录。
 
 ```bash
 $ docker run -d -v /data -p 8888:80 nginx
