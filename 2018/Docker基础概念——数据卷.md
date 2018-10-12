@@ -25,7 +25,7 @@ $ docker run -d -v /data -p 8888:80 nginx
 $ docker volume create --name my_storage
 ```
 
-挂载**my_storage**数据卷到容器内的** /data **目录。
+挂载**my_storage**数据卷到容器内的/data目录。
 
 ```bash
 $ docker run -d -v my_storage:/data -p 8888:80 nginx
@@ -73,7 +73,7 @@ $ docker run --name nginx1 -d --volumes-from nginx-volume -p 8888:80 nginx
 $ docker run --name nginx2 -d --volumes-from nginx-volume -p 8889:80 nginx
 ```
 
-访问*http://localhost:8888* 和 *http://localhost:8889* 可以看到我们拷贝的index.html的内容。
+访问 *http://localhost:8888* 和 *http://localhost:8889* 可以看到我们拷贝的index.html的内容。
 
 `--volumes-from`还可以支持级联挂载，例如：
 
