@@ -17,7 +17,33 @@ PM2可以运行bash、python、ruby、perl、node。
 ### cluster
 集群模式，这是PM2优秀的功能之一。采用Master和Worker的形式来运行代码，从而做到Load-Balancing（负载平衡）。
 
-Zero Downtime也是依赖此特性，fork模式是做不到的。reload时按顺序杀死工作进程，保证任意时刻都有工作进程在提供服务。reload过程中PM2会发送`SIGINT`信号给进程，进程做出退出服务的处理，包括停止接收新的请求、继续处理刚才未完成的请求、回收数据库和缓存的连接（Graceful Shutdown）。
+Zero Downtime也是依赖此特性，fork模式是做不到的。reload时按顺序杀死工作进程，保证任意时刻都有工作进程在提供服务。reload过程中PM2会发送`SIGINT`信号给进程，进程可监听此信号并做出退出服务的处理（需自己实现），包括停止接收新的请求、继续处理刚才未完成的请求、回收数据库和缓存的连接（Graceful Shutdown）。
+
+## Graceful Shutdown
+根据我的需求，实现的优雅退出。
+
+JSON方式启动，[配置说明](https://pm2.io/doc/en/runtime/reference/ecosystem-file/)。
+
+```javascript
+process.on('SIGINT', () => {
+  // 等待10s后关闭数据库、redis连接，进程退出。
+  // 15s后进程会被强制杀死，因为我的kill_timeout配置的是15s。
+  const WAIT_10_SECONDS = 10000
+  console.info('SIGINT signal received. Wait 10 seconds to close.', new Date())
+  server.close((err) => {
+    if (err) {
+      console.error(err)
+      process.exit(1)
+    }
+    setTimeout(() => {
+      // 释放数据库、redis等连接
+      onShutdown()
+      console.info('Server closed.', new Date())
+      process.exit(0)
+    }, WAIT_10_SECONDS)
+  })
+})
+```
 
 ## 其他优秀特性
 * 最大内存使用限制，触发后自动重启。
