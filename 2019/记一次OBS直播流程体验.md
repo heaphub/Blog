@@ -20,7 +20,7 @@ brew install nginx-full --with-rtmp-module
 ```
 
 使用下面的内容替换*/usr/local/etc/nginx/nginx.conf*
-```json
+```Nginx
 worker_processes 1;
 rtmp_auto_push on;
 events {}
@@ -79,8 +79,8 @@ VLC（[下载](https://www.videolan.org/)）播放器支持各大终端方便快
   </style>
 </head>
 <body>
-<video id="player" class="video-js vjs-default-skin vjs-big-play-centered" 
-       controls 
+<video id="player" class="video-js vjs-default-skin vjs-big-play-centered"
+       controls
        preload="auto"
        autoplay="autoplay"
        data-setup='{}'>
