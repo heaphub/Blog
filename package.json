@@ -1,0 +1,32 @@
+{
+  "name": "blog",
+  "version": "1.0.0",
+  "description": "something about code",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/llb421270473/Blog.git"
+  },
+  "keywords": [
+    "JavaScript",
+    "Awesome",
+    "CSS",
+    "MongoDB",
+    "Docker",
+    "NodeJs",
+    "Ruby",
+    "Python"
+  ],
+  "author": "Calvin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/llb421270473/Blog/issues"
+  },
+  "homepage": "https://github.com/llb421270473/Blog#readme",
+  "dependencies": {
+    "glob": "^7.1.3"
+  }
+}
