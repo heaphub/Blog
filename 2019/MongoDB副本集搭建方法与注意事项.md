@@ -18,7 +18,7 @@
 ## 安装MongoDB4.0
 1. 下载安装包`wget https://fastdl.mongodb.org/linux/mongodb-linux-x86_64-4.0.9.tgz`
 2. 解压安装包`tar -zxvf mongodb-linux-x86_64-4.0.9.tgz`
-3. 移动安装包至目标路径，我的目标路径是**/data/mongo**，`mv mongodb-linux-x86_64-4.0.9.tgz /data/mongo`
+3. 移动安装包至目标路径，我的目标路径是/data/mongo，`mv mongodb-linux-x86_64-4.0.9.tgz /data/mongo`
 4. 配置`/etc/bashrc`文件，追加**代码块1**的内容。
 5. 刷新配置，`source /etc/bashrc`
 6. 创建目标文件夹，用来存放数据文件、日志、SSLKey，`mkdir -p mongodb/data mongodb/keyfiles mongodb/logs`
@@ -61,6 +61,8 @@
 
 复制这个keyfile到其他节点，恢复先前注释的**安全配置**，重启实例。
 
+## 注意
+随着时间的变化配置可能过时，但是大致的流程类似。为了节省宝贵的时间，推荐阅读官方文档。
 
 ## 代码块
 
